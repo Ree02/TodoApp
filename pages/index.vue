@@ -1,9 +1,10 @@
 <template>
   <div>
-    <H1>Hello, World!!</H1>
+    <InputTaskCard />
   </div>
 </template>
 
 <script lang="ts">
-export default {};
+import InputTaskCard from "~/components/InputTaskCard.vue";
+export default { components: { InputTaskCard } };
 </script>
