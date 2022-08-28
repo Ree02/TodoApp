@@ -1,17 +1,6 @@
 <template>
   <div>
     <v-container>
-      <div class="filter">
-        <v-row align="center" class="mb-6">
-          <v-spacer></v-spacer>
-          <v-col v-for="task in tasks" :key="task.id" class="pa-2" cols="auto">
-            <v-btn text elevation="0">{{ state }}</v-btn>
-          </v-col>
-          <v-spacer></v-spacer>
-        </v-row>
-      </div>
-    </v-container>
-    <v-container>
       <v-simple-table fixed-header height="400px">
         <template>
           <thead>
