@@ -81,12 +81,4 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-.margin-top {
-  margin-top: 40px;
-}
-.list-index {
-  padding-right: 25px;
-  padding-top: 15px;
-}
-</style>
+<style scoped></style>
