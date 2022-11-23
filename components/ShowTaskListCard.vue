@@ -29,18 +29,19 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "@nuxtjs/composition-api";
-import useStore from "../store"
+import useStore from '../store'
 
 export default defineComponent({
   setup() {
     const store = useStore()
+    const tasks = computed(() => store.state.tasks)
     const statusList = ["未完了", "完了", "期限切れ"];
     const taskStatus = (statusId: number) => {
       return statusList[statusId];
     };
 
     return {
-      tasks: computed(() => store.state.tasks),
+      tasks,
       statusList,
       taskStatus,
     };
