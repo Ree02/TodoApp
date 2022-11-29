@@ -8,7 +8,7 @@
 							<th class="text-left">タスク名</th>
 							<th class="text-left">期限</th>
 							<th class="text-left">状態</th>
-                            <th></th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
