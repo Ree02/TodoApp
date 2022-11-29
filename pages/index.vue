@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <InputTaskCard />
-    <ShowTaskListCard />
-  </div>
+    <div>
+        <TaskListCard />
+    </div>
 </template>
 
 <script lang="ts">
-import InputTaskCard from "~/components/InputTaskCard.vue";
-import ShowTaskListCard from "~/components/ShowTaskListCard.vue";
-export default { components: { InputTaskCard, ShowTaskListCard } };
+import TaskListCardVue from "~/components/TaskListCard.vue";
+export default { components: { TaskListCardVue } };
 </script>

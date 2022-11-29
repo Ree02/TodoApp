@@ -1,45 +1,36 @@
 <template>
-  <div class="container">
-    <v-text-field label="新規タスク" :rules="rules" hide-details="auto" v-model="taskTitleComputed"/>
-    <v-btn @click="add">追加</v-btn>
-  </div>
+    <div class="container">
+        <v-text-field label="新規タスク" hide-details="auto" v-model="taskTitleComputed" />
+        <v-btn @click="onClick">追加</v-btn>
+    </div>
 </template>
 
 <script lang="ts">
 import { ref, computed, defineComponent } from "@nuxtjs/composition-api";
-import useStore from "../store"
 
 export default defineComponent({
-  setup() {
-    const store = useStore()
-    const taskTitle = ref("")
-    const taskTitleComputed = computed({
-      get: () => taskTitle.value,
-      set: (value) => (taskTitle.value = value),
-    })
+    setup(_, context) {
+        const taskTitle = ref("")
+        const taskTitleComputed = computed({
+            get: () => taskTitle.value,
+            set: (value) => (taskTitle.value = value),
+        })
+        const onClick = () => {
+            context.emit("onClick", taskTitleComputed);
+        }
 
-    const add = () => {
-      if (taskTitle != null) {
-        store.commit('addTask', taskTitle.value)
-      }
+        return {
+            taskTitle,
+            taskTitleComputed,
+            onClick,
+        }
     }
-
-    const tasks = computed(() => store.state.tasks)
-
-    return {
-      taskTitle,
-      taskTitleComputed,
-      add,
-      tasks,
-    }
-  }
-
 })
 </script>
 
 <style scoped>
 .container {
-  display: flex;
-  align-items: baseline;
+    display: flex;
+    align-items: baseline;
 }
 </style>
