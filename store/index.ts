@@ -24,7 +24,7 @@ const createStore = () => {
                     title: "お風呂掃除",
                     created: "2022-11-29T22:20:03+09:00",
                     deadlineDate: "2022-11-29T22:20:03+09:00",
-                    status: 2,
+                    status: 9,
                 },
             ],
         }),
