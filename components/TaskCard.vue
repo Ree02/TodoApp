@@ -39,9 +39,12 @@ export default defineComponent({
 
 <style scoped>
 .task-card {
-	background-color: #3B3936;
+	background-color: #F2E8DF;
 	margin: 10px 10px 0px 10px;
 	padding: 13px;
+	box-shadow:  0 5.9px 2.5px rgba(0, 0, 0, 0.057);
+	border-radius: 2%;
+	color: #000000;
 }
 .btn {
 	border: solid 1px;
@@ -49,10 +52,10 @@ export default defineComponent({
     border-radius: 5px;
 }
 .btn--red {
-	color: #486966;
-	border-color: #486966;
+	background-color: #A52502;
+	color: #F2E8DF;
 }
 .btn--red:hover {
-	background-color: #4869662d;
+	background-color: #801d02;
 }
 </style>

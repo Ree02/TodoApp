@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="board">
 		<InputTaskCard @onClick="addTask" />
 		<ShowTaskListCard :tasks="tasks" :statusList="statusList" />
 	</div>
@@ -41,3 +41,13 @@ export default defineComponent({
 	}
 });
 </script>
+
+<style scoped>
+.board {
+	width: 40%;
+	margin: 0 5px 0 5px;
+	padding-bottom: 20px;
+	border-radius: 2%;
+	background-color: #b4b4b4;
+}
+</style>

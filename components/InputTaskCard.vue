@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div>
         <v-text-field label="新規タスク" hide-details="auto" v-model="taskTitleComputed" />
-        <v-btn @click="onClick">追加</v-btn>
+        <button class="btn" @click="onClick">追加</button>
     </div>
 </template>
 
@@ -29,8 +29,11 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.container {
-    display: flex;
-    align-items: baseline;
+.btn {
+    color: #000000;
+    background-color: #F2E8DF;
+    width: 90%;
+    border-radius: 2%;
+    margin: 0 10px;
 }
 </style>
