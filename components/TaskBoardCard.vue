@@ -48,6 +48,6 @@ export default defineComponent({
 	margin: 0 5px 0 5px;
 	padding-bottom: 20px;
 	border-radius: 2%;
-	background-color: #b4b4b4;
+	background-color: #BFBFBF;
 }
 </style>

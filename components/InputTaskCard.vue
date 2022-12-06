@@ -30,8 +30,8 @@ export default defineComponent({
 
 <style scoped>
 .btn {
-    color: #000000;
-    background-color: #F2E8DF;
+    color: #424242;
+    background-color: #F0E9E3;
     width: 90%;
     border-radius: 2%;
     margin: 0 10px;

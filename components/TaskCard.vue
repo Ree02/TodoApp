@@ -39,12 +39,12 @@ export default defineComponent({
 
 <style scoped>
 .task-card {
-	background-color: #F2E8DF;
+	background-color: #F0E9E3;
 	margin: 10px 10px 0px 10px;
 	padding: 13px;
 	box-shadow:  0 5.9px 2.5px rgba(0, 0, 0, 0.057);
 	border-radius: 2%;
-	color: #000000;
+	color: #424242;
 }
 .btn {
 	border: solid 1px;
