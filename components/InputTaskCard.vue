@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-text-field label="新規タスク" hide-details="auto" v-model="taskTitleComputed" />
-        <button class="btn" @click="onClick">追加</button>
+        <button class="btn" @click="onClick">タスクを追加</button>
     </div>
 </template>
 
@@ -16,9 +16,8 @@ export default defineComponent({
             set: (value) => (taskTitle.value = value),
         })
         const onClick = () => {
-            context.emit("onClick", taskTitleComputed);
+            context.emit("onClick", taskTitleComputed.value);
         }
-
         return {
             taskTitle,
             taskTitleComputed,
@@ -31,7 +30,7 @@ export default defineComponent({
 <style scoped>
 .btn {
     color: #424242;
-    background-color: #F0E9E3;
+    background-color: 	#FFFFFF;
     width: 90%;
     border-radius: 2%;
     margin: 0 10px;

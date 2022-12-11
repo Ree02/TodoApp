@@ -1,8 +1,8 @@
 <template>
     <div class="container">
-        <TaskBoardCard />
-        <TaskBoardCard />
-        <TaskBoardCard />
+        <TaskBoardCard :status="1"/>
+        <TaskBoardCard :status="2"/>
+        <TaskBoardCard :status="3"/>
     </div>
 </template>
 
