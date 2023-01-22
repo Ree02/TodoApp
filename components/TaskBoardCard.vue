@@ -1,8 +1,7 @@
 <template>
 	<div class="board">
-		<div class="status-name">
-			{{ statusName.value }}
-			statusName()
+		<div class="status-name" :class='`color--${ statusName.toLowerCase() }`'>
+			{{ statusName }}
 		</div>
 		<InputTaskCard @onClick="addTask" />
 		<div v-for="task in tasksByStatus" :key="task.id">
@@ -28,9 +27,16 @@ export default defineComponent({
 		}
 	},
 	setup(props) {
+		type Task = {
+			id: string,
+            title: string,
+            created: string,
+            deadlineDate: string,
+            status: number,
+		}
 		const store = useStore();
 		const tasks = computed(() => store.getters.getTasks)
-		const tasksByStatus = tasks.value.filter(task => task.status == props.status);
+		const tasksByStatus = tasks.value.filter((task: Task) => task.status == props.status);
 		const addTask = (taskTitle: string) => {
 			const now = moment().format();
 			const newTask = {
@@ -43,29 +49,9 @@ export default defineComponent({
 				store.commit('addTask', newTask)
 			}
 		}
-		const statusNameObj = [
-			{
-				value: "TODO",
-				color: "status-name--green"
-			},
-			{
-				value: "INPROGRESS",
-				color: "status-name--yellow"
-			},
-			{
-				value: "DONE",
-				color: "status-name--red"
-			}
-		];
+		const statusNameObj = ["TODO", "INPROGRESS", "DONE"];
 		const statusName = computed(() => {
-			if (statusNameObj[props.status] == undefined) {
-				statusName.value = "undefined"
-				statusName.color = "status-name--undefined"
-			}
-			else {
-				statusName.color = statusNameObj[props.status].color
-				statusName.value = statusNameObj[props.status].value
-			}
+			return statusNameObj[props.status] == undefined ? "UNDEFINED" : statusNameObj[props.status];
 		});
 		return {
 			tasks,
@@ -89,13 +75,13 @@ export default defineComponent({
 .status-name {
 	border-radius: 3px 3px 0 0;
 }
-.status-name--green {
+.color--todo {
 	background-color: #267365;
 }
-.status-name--yellow {
+.color--inprogress {
 	background-color: #F29F05;
 }
-.status-name--red {
+.color--done {
 	background-color: #F23030;
 }
 </style>
