@@ -69,11 +69,14 @@ export default defineComponent({
 	width: 40%;
 	margin: 0 5px 0 5px;
 	padding-bottom: 20px;
-	border-radius: 3px;
+	border-radius: 10px;
 	background-color: #F2F1EF;
 }
 .status-name {
-	border-radius: 3px 3px 0 0;
+	border-radius: 10px 10px 0 0;
+	padding: 5px;
+    text-align: center;
+	color: #FFFFFF;
 }
 .color--todo {
 	background-color: #267365;

@@ -1,7 +1,11 @@
 <template>
     <div>
-        <v-text-field label="新規タスク" hide-details="auto" v-model="taskTitleComputed" />
-        <button class="btn" @click="onClick">タスクを追加</button>
+        <v-btn class="ma-2, btn">
+            <v-icon left>
+                mdi-plus
+            </v-icon>
+            タスクを追加
+        </v-btn>
     </div>
 </template>
 
@@ -30,9 +34,12 @@ export default defineComponent({
 <style scoped>
 .btn {
     color: #424242;
-    background-color: 	#FFFFFF;
-    width: 90%;
+    background-color: #FFFFFF;
     border-radius: 2%;
-    margin: 0 10px;
+    margin: 15px 10px;
+}
+.add-button {
+    margin: 15px 10px;
+    padding: 5px 82px;
 }
 </style>
