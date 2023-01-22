@@ -24,6 +24,13 @@ export default {
 
 <style scoped>
 .toolbar-title {
+  font-family: "Arial Black", "メイリオ" !important;
   font-size: 30px;
+  color: #424242;
+}
+.v-application{
+  font-family: "Arial", "メイリオ" !important;
+  font-size: 15px;
+  color: #424242;
 }
 </style>

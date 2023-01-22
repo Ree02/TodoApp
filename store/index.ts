@@ -26,6 +26,13 @@ const createStore = () => {
                     deadlineDate: "2022-11-29T22:20:03+09:00",
                     status: 2,
                 },
+                {
+                    id: "4",
+                    title: "ごみすて",
+                    created: "2022-11-29T22:20:03+09:00",
+                    deadlineDate: "2022-11-29T22:20:03+09:00",
+                    status: 2,
+                },
             ],
         }),
         getters: {
@@ -41,7 +48,7 @@ const createStore = () => {
                     title: newTask.title,
                     created: now,
                     deadlineDate: newTask.deadlineDate,
-                    status: 0,
+                    status: newTask.status,
                 });
             },
         },
