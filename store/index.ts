@@ -1,5 +1,4 @@
 import Vuex from "vuex";
-import moment from 'moment';
 
 const createStore = () => {
     return new Vuex.Store({
@@ -8,29 +7,33 @@ const createStore = () => {
                 {
                     id: "1",
                     title: "書類提出",
-                    created: "2022-11-29T22:20:03+09:00",
-                    deadlineDate: "2022-11-29T22:20:03+09:00",
+                    project: "生活",
+                    created: new Date(2020, 8, 20, 21, 10, 5),
+                    deadlineDate: new Date(2020, 8, 21, 21, 10, 5),
                     status: 0,
                 },
                 {
                     id: "2",
                     title: "買い物",
-                    created:"2022-11-29T22:20:03+09:00",
-                    deadlineDate: "2022-11-29T22:20:03+09:00",
+                    project: "生活",
+                    created: new Date(2021, 8, 20, 21, 10, 5),
+                    deadlineDate: new Date(2021, 8, 21, 21, 10, 5),
                     status: 1,
                 },
                 {
                     id: "3",
                     title: "お風呂掃除",
-                    created: "2022-11-29T22:20:03+09:00",
-                    deadlineDate: "2022-11-29T22:20:03+09:00",
+                    project: "生活",
+                    created: new Date(2022, 8, 20, 21, 10, 5),
+                    deadlineDate: new Date(2022, 8, 21, 21, 10, 5),
                     status: 2,
                 },
                 {
                     id: "4",
                     title: "ごみすて",
-                    created: "2022-11-29T22:20:03+09:00",
-                    deadlineDate: "2022-11-29T22:20:03+09:00",
+                    project: "生活",
+                    created: new Date(2023, 1, 20, 21, 10, 5),
+                    deadlineDate: new Date(2023, 1, 21, 21, 10, 5),
                     status: 2,
                 },
             ],
@@ -42,10 +45,11 @@ const createStore = () => {
         },
         mutations: {
             addTask(state, newTask) {
-                const now = moment().format();
+                const now = new Date();
                 state.tasks.unshift({
                     id: getUniqueStr(),
                     title: newTask.title,
+                    project: newTask.project,
                     created: now,
                     deadlineDate: newTask.deadlineDate,
                     status: newTask.status,
@@ -60,5 +64,5 @@ const getUniqueStr = () => {
     return (
         new Date().getTime().toString() +
         Math.floor(4 * Math.random()).toString()
-      );
+    );
 }
