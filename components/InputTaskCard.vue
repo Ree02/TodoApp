@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-btn class="ma-2, btn">
+        <v-btn outlined class="ma-2, btn" :class="`btn-color--${ status }`">
             <v-icon left>
                 mdi-plus
             </v-icon>
@@ -13,6 +13,11 @@
 import { ref, computed, defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
+    props: {
+        status: {
+			type: String
+		}
+    },
     setup(_, context) {
         const taskTitle = ref("")
         const taskTitleComputed = computed({
@@ -34,12 +39,21 @@ export default defineComponent({
 <style scoped>
 .btn {
     color: #424242;
-    background-color: #FFFFFF;
     border-radius: 2%;
     margin: 15px 10px;
+    padding: 0px 60px;
+    min-width: 91% !important;
 }
-.add-button {
-    margin: 15px 10px;
-    padding: 5px 82px;
+.btn-color--todo {
+	border: 1px solid #267365;
+    color: #267365;
+}
+.btn-color--inprogress {
+    border: 1px solid #F29F05;
+    color: #F29F05;
+}
+.btn-color--done {
+    border: 1px solid #F23030;
+    color: #F23030;
 }
 </style>

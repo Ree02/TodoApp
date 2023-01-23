@@ -1,9 +1,9 @@
 <template>
 	<div class="board">
-		<div class="status-name" :class='`color--${ statusName.toLowerCase() }`'>
-			{{ statusName }}
+		<div class="status-name" :class='`background-color--${ statusName }`'>
+			{{ statusName.toUpperCase() }}
 		</div>
-		<InputTaskCard @onClick="addTask" />
+		<InputTaskCard @onClick="addTask" :status="statusName"/>
 		<div v-for="task in tasksByStatus" :key="task.id">
 			<TaskCard :task="task" />
 		</div>
@@ -49,7 +49,7 @@ export default defineComponent({
 				store.commit('addTask', newTask)
 			}
 		}
-		const statusNameObj = ["TODO", "INPROGRESS", "DONE"];
+		const statusNameObj = ["todo", "inprogress", "done"];
 		const statusName = computed(() => {
 			return statusNameObj[props.status] == undefined ? "UNDEFINED" : statusNameObj[props.status];
 		});
@@ -78,13 +78,13 @@ export default defineComponent({
     text-align: center;
 	color: #FFFFFF;
 }
-.color--todo {
+.background-color--todo {
 	background-color: #267365;
 }
-.color--inprogress {
+.background-color--inprogress {
 	background-color: #F29F05;
 }
-.color--done {
+.background-color--done {
 	background-color: #F23030;
 }
 </style>
