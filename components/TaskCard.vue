@@ -51,13 +51,14 @@ export default defineComponent({
 	color: #424242;
 }
 .task-id {
-	font-size: 5px;
+	font-size: 13px;
+	color: #bebebe;
 }
 .task-title {
 
 }
 .task-deadlineDate {
-	padding-top: 13px;
+	padding-top: 15px;
 }
 .task-projec {
 
