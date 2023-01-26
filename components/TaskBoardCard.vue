@@ -3,7 +3,7 @@
 		<div class="status-name" :class='`background-color--${ statusName }`'>
 			{{ statusName.toUpperCase() }}
 		</div>
-		<InputTaskCard @onClick="addTask" :status="statusName"/>
+		<InputTaskButton @onClick="addTask" :status="statusName"/>
 		<div v-for="task in tasksByStatus" :key="task.id">
 			<TaskCard :task="task" />
 		</div>
@@ -14,11 +14,11 @@
 import { computed, defineComponent } from "@nuxtjs/composition-api";
 import useStore from '../store';
 import moment from 'moment';
-import InputTaskCard from "~/components/InputTaskCard.vue";
+import InputTaskButton from "~/components/InputTaskButton.vue";
 
 export default defineComponent({
 	components: {
-		InputTaskCard
+		InputTaskButton
 	},
 	props: {
 		status: {
