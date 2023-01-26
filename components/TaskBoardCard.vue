@@ -1,9 +1,9 @@
 <template>
 	<div class="board">
-		<div class="status-name" :class='`color--${ statusName.toLowerCase() }`'>
-			{{ statusName }}
+		<div class="status-name" :class='`background-color--${ statusName }`'>
+			{{ statusName.toUpperCase() }}
 		</div>
-		<InputTaskCard @onClick="addTask" />
+		<InputTaskButton @onClick="addTask" :status="statusName"/>
 		<div v-for="task in tasksByStatus" :key="task.id">
 			<TaskCard :task="task" />
 		</div>
@@ -14,11 +14,11 @@
 import { computed, defineComponent } from "@nuxtjs/composition-api";
 import useStore from '../store';
 import moment from 'moment';
-import InputTaskCard from "~/components/InputTaskCard.vue";
+import InputTaskButton from "~/components/InputTaskButton.vue";
 
 export default defineComponent({
 	components: {
-		InputTaskCard
+		InputTaskButton
 	},
 	props: {
 		status: {
@@ -49,7 +49,7 @@ export default defineComponent({
 				store.commit('addTask', newTask)
 			}
 		}
-		const statusNameObj = ["TODO", "INPROGRESS", "DONE"];
+		const statusNameObj = ["todo", "inprogress", "done"];
 		const statusName = computed(() => {
 			return statusNameObj[props.status] == undefined ? "UNDEFINED" : statusNameObj[props.status];
 		});
@@ -69,19 +69,22 @@ export default defineComponent({
 	width: 40%;
 	margin: 0 5px 0 5px;
 	padding-bottom: 20px;
-	border-radius: 3px;
+	border-radius: 10px;
 	background-color: #F2F1EF;
 }
 .status-name {
-	border-radius: 3px 3px 0 0;
+	border-radius: 10px 10px 0 0;
+	padding: 5px;
+    text-align: center;
+	color: #FFFFFF;
 }
-.color--todo {
+.background-color--todo {
 	background-color: #267365;
 }
-.color--inprogress {
+.background-color--inprogress {
 	background-color: #F29F05;
 }
-.color--done {
+.background-color--done {
 	background-color: #F23030;
 }
 </style>
